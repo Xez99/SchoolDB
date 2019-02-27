@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <Properties>
+        <Property name="logger.level">INFO</Property>
+        <Property name="logger.pattern">[%-5p] %d{yyyy-MM-dd HH:mm:ss} [%t{3}] at %c{-2}:%L - %msg%n</Property>
+    </Properties>
+
+    <Appenders>
+        <RollingFile name="fileLogger"  filePattern="${sys:user.home}/SchoolDB/logs-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="${logger.pattern}" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+                <SizeBasedTriggeringPolicy size = "100 KB" />
+            </Policies>
+        </RollingFile>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${logger.pattern}"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <!-- Root Logger -->
+        <Root level="${logger.level}">
+            <AppenderRef ref="fileLogger"/>
+            <!-- Enable this if you want to display logs in console -->
+            <!-- <AppenderRef ref="Console"/> -->
+        </Root>
+    </Loggers>
+
+</Configuration>

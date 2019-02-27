@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.xez99.Controllers.Authorization">
+    <VBox alignment="CENTER" layoutX="230.0" layoutY="45.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0"
+          prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0">
+        <AnchorPane prefHeight="66.0" prefWidth="600.0">
+            <VBox alignment="BOTTOM_CENTER" prefHeight="200.0" prefWidth="600.0" spacing="10.0"
+                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                  AnchorPane.topAnchor="0.0">
+                <padding>
+                    <Insets bottom="10.0" top="10.0"/>
+                </padding>
+                <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../Icons/school.png"/>
+                </ImageView>
+                <Label contentDisplay="RIGHT" text="  Логин:" textAlignment="RIGHT">
+                    <graphic>
+                        <TextField fx:id="login"/>
+                    </graphic>
+                </Label>
+                <Label contentDisplay="RIGHT" text="Пароль:" textAlignment="RIGHT" VBox.vgrow="SOMETIMES">
+                    <graphic>
+                        <PasswordField fx:id="password"/>
+                    </graphic>
+                </Label>
+            </VBox>
+        </AnchorPane>
+        <AnchorPane prefHeight="84.0" prefWidth="600.0">
+            <HBox alignment="TOP_CENTER" layoutX="184.0" layoutY="94.0" prefHeight="175.0" prefWidth="600.0"
+                  spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <Label contentDisplay="RIGHT" text="IP:">
+                    <graphic>
+                        <TextField fx:id="ip"/>
+                    </graphic>
+                </Label>
+                <Label contentDisplay="RIGHT" text="Port:">
+                    <HBox.margin>
+                        <Insets left="20.0"/>
+                    </HBox.margin>
+                    <graphic>
+                        <TextField fx:id="port"/>
+                    </graphic>
+                </Label>
+            </HBox>
+        </AnchorPane>
+    </VBox>
+    <ButtonBar layoutX="14.0" layoutY="346.0" maxHeight="-Infinity" minHeight="-Infinity"
+               prefHeight="50.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+               AnchorPane.rightAnchor="0.0">
+        <buttons>
+            <Button defaultButton="true" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity"
+                    minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#connect"
+                    prefHeight="30.0" prefWidth="105.0" text="Авторизация"/>
+        </buttons>
+        <padding>
+            <Insets bottom="10.0" right="10.0"/>
+        </padding>
+    </ButtonBar>
+</AnchorPane>
